@@ -33,6 +33,19 @@ function App() {
           trackBorder="1px solid black"
           trackBorderRadius="0px"
         ></InputRange>
+        <p>Example Style 4:</p>
+        <InputRange
+          thumbColor="white"
+          thumbBorder="1px solid grey"
+          thumbWidth="14px"
+          thumbHeight="14px"
+          thumbBorderRadius="14px"
+          trackWidth="100%"
+          trackHeight="14px"
+          trackBackgroundColor="grey"
+          trackProgressColor="white"
+          trackBorderRadius="14px"
+        ></InputRange>
       </header>
     </div>
   );
