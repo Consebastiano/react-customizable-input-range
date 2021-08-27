@@ -1,8 +1,8 @@
-WIP 
+# react-customizable-input-range - WIP 
 
 A react input range component easy to customize and style.
 
-TO DO:
+## TO DO:
 
 * check for multiple styles and add possible missing props
 * check accessibility
