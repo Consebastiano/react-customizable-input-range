@@ -24,10 +24,12 @@ const sliderTrackStyles = (props) => `
 
 export const InputContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   .value {
     font-size: 2rem;
+    margin-left: 2rem;
+    width: 6rem;
   }
   .slider {
     -webkit-appearance: none;
