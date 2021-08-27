@@ -26,7 +26,7 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  .value {
+  .label {
     font-size: 2rem;
     margin-left: 2rem;
     width: 6rem;
@@ -52,10 +52,6 @@ export const InputContainer = styled.div`
       box-shadow: none;
       border: none;
       background: transparent;
-    }
-    &::-moz-range-track {
-    }
-    &::-ms-track {
     }
   }
 `;
