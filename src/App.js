@@ -32,6 +32,7 @@ function App() {
           trackProgressColor="red"
           trackBorder="1px solid black"
           trackBorderRadius="0px"
+          initialValue={40}
         ></InputRange>
         <p>Example Style 4:</p>
         <InputRange

@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { InputContainer } from "./style";
 import PropTypes from "prop-types";
 
 const InputRange = (props) => {
   const [value, setValue] = useState(props.initialValue);
+  const inputRef = useRef(null);
 
   const handleOnChange = (event) => {
     setValue(event.target.value);
     props.onChange(event.target.value);
-    const percentValue = ((event.target.value - props.minValue) * 100) / (props.maxValue - props.minValue);
-    const percentModifier = -(((2 / 100) * percentValue - 1) * parseInt(props.thumbWidth, 10)) / 2;
-    event.target.style.backgroundSize = `calc(${percentValue}% + ${percentModifier}px) 100%`;
   };
+
+  useEffect(() => {
+    const percentValue =
+      ((value - props.minValue) * 100) / (props.maxValue - props.minValue);
+    const percentModifier =
+      -(((2 / 100) * percentValue - 1) * parseInt(props.thumbWidth, 10)) / 2;
+    inputRef.current.style.backgroundSize = `calc(${percentValue}% + ${percentModifier}px) 100%`;
+  }, [value]);
 
   return (
     <InputContainer
@@ -37,6 +43,7 @@ const InputRange = (props) => {
         step={props.step}
         list={props.list}
         className="slider"
+        ref={inputRef}
         onChange={(e) => {
           handleOnChange(e);
         }}
