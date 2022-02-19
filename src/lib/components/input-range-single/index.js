@@ -7,6 +7,7 @@ const InputRange = (props) => {
 
   const handleOnChange = (event) => {
     setValue(event.target.value);
+    props.onChange(event.target.value);
     const percentValue = ((event.target.value - props.minValue) * 100) / (props.maxValue - props.minValue);
     const percentModifier = -(((2 / 100) * percentValue - 1) * parseInt(props.thumbWidth, 10)) / 2;
     event.target.style.backgroundSize = `calc(${percentValue}% + ${percentModifier}px) 100%`;
@@ -50,6 +51,7 @@ InputRange.propTypes = {
   minValue: PropTypes.number,
   maxValue: PropTypes.number,
   step: PropTypes.number,
+  onChange: PropTypes.func,
   list: PropTypes.element,
   hasLabel: PropTypes.bool,
   thumbColor: PropTypes.string,
@@ -71,6 +73,7 @@ InputRange.defaultProps = {
   minValue: 0,
   maxValue: 100,
   step: 1,
+  onChange: () => {},
   list: <></>,
   hasLabel: true,
   thumbColor: "#007CF8",
